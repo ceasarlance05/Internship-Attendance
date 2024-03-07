@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intern Attendance</title>
+    <link rel="stylesheet" href="{% static 'attendance/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Intern Attendance</h1>
+        <form action="{% url 'mark_attendance' %}" method="post" class="form">
+            {% csrf_token %}
+            <label for="intern" class="label">Intern:</label>
+            <select name="intern" id="intern" class="select">
+                {% for intern in interns %}
+                <option value="{{ intern.id }}" class="option">{{ intern.name }}</option>
+                {% endfor %}
+            </select><br>
+            <button type="submit" class="button">Mark Attendance</button>
+        </form>
+    </div>
+</body>
+</html>

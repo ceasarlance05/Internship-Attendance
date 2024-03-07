@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Already Marked</title>
+    <link rel="stylesheet" href="{% static 'attendance/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Attendance Already Marked</h1>
+        <p class="message">Your attendance has already been marked for today.</p>
+        <a href="{% url 'home' %}" class="btn">Go Back</a>
+    </div>
+</body>
+</html>
